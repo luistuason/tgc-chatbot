@@ -1,5 +1,8 @@
 'use strict';
 
+const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
+const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
+
 // Imports dependencies and set up http server
 const
     express = require('express'),
@@ -40,9 +43,6 @@ app.post('/webhook', (req, res) =>{
 
 // Adds support for GET requests to our webhook
 app.get('/webhook', (req, res) => {
-
-    // Your verify token. SHould be a random string.
-    let VERIFY_TOKEN = 'wf1Y1vNem8ZnhAz8QSAX';
 
     // Parse the query params
     let mode = req.query['hub.mode'];
