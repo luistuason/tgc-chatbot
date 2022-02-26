@@ -133,10 +133,16 @@ function handlePostback(sender_psid, recieved_postback) {
     let payload = recieved_postback.payload;
 
     // Set the response based on the postback payload
-    if (payload === 'yes') {
-        response = { "text": "Thanks!" }
-    } else if (payload === 'no') {
-        response = { "text": "Oops, try sending another image." }
+    switch (payload) {
+        case "GET_STARTED":
+            response = { "text": "Greetings!" };
+            break;
+        case "yes":
+            response = { "text": "Thanks!" };
+            break;
+        case "no":
+            response = { "text": "Oops, try sending another image." };
+            break;
     }
 
     // Send the message to acknowledge the postback
