@@ -162,8 +162,34 @@ function handlePostback(sender_psid, recieved_postback) {
             };
             break;
         case "SEND_MENU":
-            
+            response = { "attachment": {
+                    "type": "image", 
+                    "payload": {
+                        "is_reusable": true,
+                        "url":"https://raw.githubusercontent.com/luistuason/tgc-chatbot/main/img/menu.jpg"
+                    }
+                }
+            };
             break;
+        case "SEND_BESTSELLERS":
+            response = { "attachment": {
+                    "type": "image", 
+                    "payload": {
+                        "is_reusable": true,
+                        "url":"https://raw.githubusercontent.com/luistuason/tgc-chatbot/main/img/bestsellers.jpg"
+                    }
+                }
+            };
+            break;
+        case "SEND_LOCATION":
+            response = { "attachment": {
+                "type": "image", 
+                "payload": {
+                    "is_reusable": true,
+                    "url":"https://raw.githubusercontent.com/luistuason/tgc-chatbot/main/img/location.jpg"
+                }
+            }
+        };
         case "yes":
             response = { "text": "Thanks!" };
             break;
