@@ -183,13 +183,14 @@ function handlePostback(sender_psid, recieved_postback) {
             break;
         case "SEND_LOCATION":
             response = { "attachment": {
-                "type": "image", 
-                "payload": {
-                    "is_reusable": true,
-                    "url":"https://raw.githubusercontent.com/luistuason/tgc-chatbot/main/img/location.jpg"
+                    "type": "image", 
+                    "payload": {
+                        "is_reusable": true,
+                        "url":"https://raw.githubusercontent.com/luistuason/tgc-chatbot/main/img/location.jpg"
+                    }
                 }
-            }
-        };
+            };
+            break;
         case "yes":
             response = { "text": "Thanks!" };
             break;
