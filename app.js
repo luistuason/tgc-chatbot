@@ -135,7 +135,34 @@ function handlePostback(sender_psid, recieved_postback) {
     // Set the response based on the postback payload
     switch (payload) {
         case "GET_STARTED":
-            response = { "text": "Greetings!" };
+            response = { "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": "Which would you like to see?",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Menu",
+                                "payload": "SEND_MENU",
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Bestsellers",
+                                "payload": "SEND_BESTSELLERS"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Store Location",
+                                "payload": "SEND_LOCATION",
+                            }
+                        ]
+                    }
+                }
+            };
+            break;
+        case "SEND_MENU":
+            
             break;
         case "yes":
             response = { "text": "Thanks!" };
